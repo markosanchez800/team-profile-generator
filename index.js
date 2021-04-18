@@ -103,11 +103,11 @@ function addMore(){
                             {
                                 type:'input',
                                 message:'Github Name?',
-                                name:'gitName',
+                                name:'github',
                             }
                         ])
                         .then((response) => {
-                            newGuy = new Engineer(response.name,response.id,response.email,response.gitName);
+                            newGuy = new Engineer(response.name,response.id,response.email,response.github);
                             const engHtml =
                              `
                              <div class="card text-dark bg-info mb-3" style="max-width: 18rem;">
@@ -117,7 +117,7 @@ function addMore(){
                              <ul class="list-group list-group-flush">
                              <li class="list-group-item">ID: ${newGuy.id}</li>
                              <li class="list-group-item">Email: ${newGuy.email}</li>
-                             <li class="list-group-item">Office Number: ${newGuy.gitName}</li>
+                             <li class="list-group-item">Github: ${newGuy.github}</li>
                              </div>
                              </div>
                              `
@@ -165,7 +165,7 @@ function addMore(){
                              <ul class="list-group list-group-flush">
                              <li class="list-group-item">ID: ${newGuy.id}</li>
                              <li class="list-group-item">Email: ${newGuy.email}</li>
-                             <li class="list-group-item">Office Number: ${newGuy.school}</li>
+                             <li class="list-group-item">School: ${newGuy.school}</li>
                              </div>
                              </div>
                             `
