@@ -151,10 +151,32 @@ function addMore(){
                             {
                                 type:'input',
                                 message:'School Name?',
-                                name:'schoolName',
+                                name:'school',
                             }
                         ])
-                        .then(response)
+                        .then((response) => {
+                            newGuy = new Intern(response.name,response.id,response.email,response.school);
+                            const intHtml = 
+                            `
+                            <div class="card text-dark bg-info mb-3" style="max-width: 18rem;">
+                             <div class="card-header">${newGuy.name}</div>
+                             <div class="card-header">${newGuy.getRole()} 🎓</div>
+                             <div class="card-body">
+                             <ul class="list-group list-group-flush">
+                             <li class="list-group-item">ID: ${newGuy.id}</li>
+                             <li class="list-group-item">Email: ${newGuy.email}</li>
+                             <li class="list-group-item">Office Number: ${newGuy.school}</li>
+                             </div>
+                             </div>
+                            `
+                            fs.appendFile('teamprofile.html',intHtml,function(err){
+                                if(err){
+                                    console.log(err);
+                                }
+                            })
+                            console.log('Intern Added');
+                            addMore();
+                        })
                     }
                 })
             }
