@@ -5,6 +5,7 @@ const Engineer = require('./Engineer');
 const Intern = require('./Intern');
 
 
+
 function init(){
     initHTML();
     makeManager();
@@ -35,6 +36,26 @@ function makeManager(){
             name:'officeNum',
         }
     ])
+    .then((response)=>{
+        topDog = new Manager(response.name,response.id,response.email,response.officeNum);
+        const manHtml = `
+        <div class="card text-dark bg-info mb-3" style="max-width: 18rem;">
+        <div class="card-header">${topDog.name}\n${topDog.getRole()}</div>
+        <div class="card-body">
+        <ul class="list-group list-group-flush">
+        <li class="list-group-item">ID: ${topDog.id}</li>
+        <li class="list-group-item">Email: ${topDog.email}</li>
+        <li class="list-group-item">Office Number: ${topDog.officeNum}</li>
+        </div>
+        </div>
+        `
+        fs.appendFile('teamprofile.html',manHtml,function(err){
+            if(err){
+                console.log(err);
+            }
+        })
+        console.log('Manager Added');
+    });
 }
 
 function initHTML(){
@@ -50,10 +71,6 @@ function initHTML(){
             <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
         </head>
         <body>
-           
-            <script src="" async defer></script>
-        </body>
-    </html>
     `;
     fs.writeFile('teamprofile.html',html,function(err){
         if (err){
