@@ -196,6 +196,9 @@ function initHTML(){
             <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
         </head>
         <body>
+        <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+        Team Profiles
+        </header>
     `;
     fs.writeFile('teamprofile.html',html,function(err){
         if (err){
