@@ -40,7 +40,8 @@ function makeManager(){
         topDog = new Manager(response.name,response.id,response.email,response.officeNum);
         const manHtml = `
         <div class="card text-dark bg-info mb-3" style="max-width: 18rem;">
-        <div class="card-header">${topDog.name}\n${topDog.getRole()}</div>
+        <div class="card-header">${topDog.name}</div>
+        <div class="card-header">${topDog.getRole()} ☕️</div>
         <div class="card-body">
         <ul class="list-group list-group-flush">
         <li class="list-group-item">ID: ${topDog.id}</li>
@@ -55,7 +56,109 @@ function makeManager(){
             }
         })
         console.log('Manager Added');
+        addMore();
     });
+}
+
+function addMore(){
+    inquirer
+        .prompt([
+        {
+            type:'list',
+            message:'Add another employee?',
+            choices:['Yes','No'],
+            name:'confirm',
+        }
+        ])
+        .then((response)=> {
+            if(response.confirm === 'Yes'){
+                inquirer
+                .prompt([
+                    {
+                        type:'list',
+                        message:'Which kind of employee?',
+                        choices:['Engineer','Intern'],
+                        name:'eOI',
+                    }
+                ])
+                .then((response) => {
+                    if(response.eOI === 'Engineer'){
+                        inquirer
+                        .prompt([
+                            {
+                                type:'input',
+                                message: 'Engineers Name?',
+                                name: 'name',
+                            },
+                            {
+                                type:'input',
+                                message:'Engineers Id?',
+                                name: 'id',
+                            },
+                            {
+                                type:'input',
+                                message:'Engineers Email?',
+                                name:'email',
+                            },
+                            {
+                                type:'input',
+                                message:'Github Name?',
+                                name:'gitName',
+                            }
+                        ])
+                        .then((response) => {
+                            newGuy = new Engineer(response.name,response.id,response.email,response.gitName);
+                            const engHtml =
+                             `
+                             <div class="card text-dark bg-info mb-3" style="max-width: 18rem;">
+                             <div class="card-header">${newGuy.name}</div>
+                             <div class="card-header">${newGuy.getRole()} 🛠</div>
+                             <div class="card-body">
+                             <ul class="list-group list-group-flush">
+                             <li class="list-group-item">ID: ${newGuy.id}</li>
+                             <li class="list-group-item">Email: ${newGuy.email}</li>
+                             <li class="list-group-item">Office Number: ${newGuy.gitName}</li>
+                             </div>
+                             </div>
+                             `
+                             fs.appendFile('teamprofile.html',engHtml,function(err){
+                                if(err){
+                                    console.log(err);
+                                }
+                             })
+                             console.log('Engineer Added');
+                             addMore();
+                        })
+                    }
+                    else if (response.eOI === 'Intern'){
+                        inquirer
+                        .prompt([
+                            {
+                                type:'input',
+                                message: 'Interns Name?',
+                                name: 'name',
+                            },
+                            {
+                                type:'input',
+                                message:'Interns Id?',
+                                name: 'id',
+                            },
+                            {
+                                type:'input',
+                                message:'Interns Email?',
+                                name:'email',
+                            },
+                            {
+                                type:'input',
+                                message:'School Name?',
+                                name:'schoolName',
+                            }
+                        ])
+                        .then(response)
+                    }
+                })
+            }
+        })
 }
 
 function initHTML(){
