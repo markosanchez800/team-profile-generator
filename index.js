@@ -180,6 +180,10 @@ function addMore(){
                     }
                 })
             }
+            else if (response.confirm === 'No'){
+                console.log('Team Built');
+                endHtml();
+            }
         })
 }
 
@@ -199,6 +203,8 @@ function initHTML(){
         <header class="text-center border-bottom bg-info">
         <h1>Team Profiles</h1>
         </header>
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+        <div class="col">
     `;
     fs.writeFile('teamprofile.html',html,function(err){
         if (err){
@@ -208,10 +214,21 @@ function initHTML(){
     console.log("HTML Initialized");
 }
 
-
-
-
-
+function endHtml(){
+    const finishedHtml = 
+    `
+    </div>
+    </div>
+    </body>
+    </html>
+    `;
+    fs.appendFile('teamprofile.html',finishedHtml,function(err){
+        if (err){
+            console.log(err);
+        }
+    });
+    console.log('Html Complete');
+}
 
 
 
