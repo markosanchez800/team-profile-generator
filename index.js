@@ -40,7 +40,7 @@ function makeManager(){
         topDog = new Manager(response.name,response.id,response.email,response.officeNum);
         const manHtml = `
         <div class="col-md-4">
-        <div class="card text-dark bg-info mb-3">
+        <div class="card text-dark bg-info mb-3" style="border: 3px solid rgb(137, 190, 207); border-radius:15px; margin-bottom:8px">
         <div class="card-header text-center"><h4>${topDog.name}</h4></div>
         <div class="card-header text-center"><h4>${topDog.getRole()} ☕️</h4></div>
         <div class="card-body">
@@ -113,7 +113,7 @@ function addMore(){
                             const engHtml =
                              `
                              <div class="col-md-4">  
-                             <div class="card text-dark bg-info mb-3">
+                             <div class="card text-dark bg-info mb-3" style="border: 3px solid rgb(137, 190, 207); border-radius:15px; margin-bottom:8px">
                              <div class="card-header text-center"><h4>${newGuy.name}</h4></div>
                              <div class="card-header text-center"><h4>${newGuy.getRole()} 🛠</h4></div>
                              <div class="card-body">
@@ -163,7 +163,7 @@ function addMore(){
                             const intHtml = 
                             `
                             <div class="col-md-4">   
-                            <div class="card text-dark bg-info mb-3">
+                            <div class="card text-dark bg-info mb-3" style="border: 3px solid rgb(137, 190, 207); border-radius:15px; margin-bottom:8px">
                              <div class="card-header text-center"><h4>${newGuy.name}</h4></div>
                              <div class="card-header text-center"><h4>${newGuy.getRole()} 🎓</h4></div>
                              <div class="card-body">
