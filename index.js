@@ -45,7 +45,7 @@ function makeManager(){
         <div class="card-body">
         <ul class="list-group list-group-flush">
         <li class="list-group-item">ID: ${topDog.id}</li>
-        <li class="list-group-item">Email: ${topDog.email}</li>
+        <li class="list-group-item">Email:<a href="mailto:${topDog.email}">${topDog.email}</a></li>
         <li class="list-group-item">Office Number: ${topDog.officeNum}</li>
         </div>
         </div>
@@ -116,8 +116,8 @@ function addMore(){
                              <div class="card-body">
                              <ul class="list-group list-group-flush">
                              <li class="list-group-item">ID: ${newGuy.id}</li>
-                             <li class="list-group-item">Email: ${newGuy.email}</li>
-                             <li class="list-group-item">Github: ${newGuy.github}</li>
+                             <li class="list-group-item">Email:<a href="mailto:${newGuy.email}">${newGuy.email}</a></li>
+                             <li class="list-group-item">Github:<a href="https://github.com/${newGuy.github}">${newGuy.github}</a></li>
                              </div>
                              </div>
                              `
@@ -164,7 +164,7 @@ function addMore(){
                              <div class="card-body">
                              <ul class="list-group list-group-flush">
                              <li class="list-group-item">ID: ${newGuy.id}</li>
-                             <li class="list-group-item">Email: ${newGuy.email}</li>
+                             <li class="list-group-item">Email:<a href="mailto:${newGuy.email}">${newGuy.email}</a></li>
                              <li class="list-group-item">School: ${newGuy.school}</li>
                              </div>
                              </div>
