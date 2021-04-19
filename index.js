@@ -39,14 +39,16 @@ function makeManager(){
     .then((response)=>{
         topDog = new Manager(response.name,response.id,response.email,response.officeNum);
         const manHtml = `
-        <div class="card text-dark bg-info mb-3" style="max-width: 18rem;">
-        <div class="card-header text-center">${topDog.name}</div>
-        <div class="card-header text-center">${topDog.getRole()} ☕️</div>
+        <div class="col-md-4">
+        <div class="card text-dark bg-info mb-3">
+        <div class="card-header text-center"><h4>${topDog.name}</h4></div>
+        <div class="card-header text-center"><h4>${topDog.getRole()} ☕️</h4></div>
         <div class="card-body">
         <ul class="list-group list-group-flush">
         <li class="list-group-item">ID: ${topDog.id}</li>
-        <li class="list-group-item">Email:<a href="mailto:${topDog.email}">${topDog.email}</a></li>
+        <li class="list-group-item">Email: <a href="mailto:${topDog.email}"> ${topDog.email}</a></li>
         <li class="list-group-item">Office Number: ${topDog.officeNum}</li>
+        </div>
         </div>
         </div>
         `
@@ -110,16 +112,18 @@ function addMore(){
                             newGuy = new Engineer(response.name,response.id,response.email,response.github);
                             const engHtml =
                              `
-                             <div class="card text-dark bg-info mb-3" style="max-width: 18rem;">
-                             <div class="card-header text-center">${newGuy.name}</div>
-                             <div class="card-header text-center">${newGuy.getRole()} 🛠</div>
+                             <div class="col-md-4">  
+                             <div class="card text-dark bg-info mb-3">
+                             <div class="card-header text-center"><h4>${newGuy.name}</h4></div>
+                             <div class="card-header text-center"><h4>${newGuy.getRole()} 🛠</h4></div>
                              <div class="card-body">
                              <ul class="list-group list-group-flush">
                              <li class="list-group-item">ID: ${newGuy.id}</li>
-                             <li class="list-group-item">Email:<a href="mailto:${newGuy.email}">${newGuy.email}</a></li>
-                             <li class="list-group-item">Github:<a href="https://github.com/${newGuy.github}">${newGuy.github}</a></li>
+                             <li class="list-group-item">Email: <a href="mailto:${newGuy.email}"> ${newGuy.email}</a></li>
+                             <li class="list-group-item">Github: <a href="https://github.com/${newGuy.github}"> ${newGuy.github}</a></li>
                              </div>
                              </div>
+                             </div> 
                              `
                              fs.appendFile('teamprofile.html',engHtml,function(err){
                                 if(err){
@@ -158,14 +162,16 @@ function addMore(){
                             newGuy = new Intern(response.name,response.id,response.email,response.school);
                             const intHtml = 
                             `
-                            <div class="card text-dark bg-info mb-3" style="max-width: 18rem;">
-                             <div class="card-header text-center">${newGuy.name}</div>
-                             <div class="card-header text-center">${newGuy.getRole()} 🎓</div>
+                            <div class="col-md-4">   
+                            <div class="card text-dark bg-info mb-3">
+                             <div class="card-header text-center"><h4>${newGuy.name}</h4></div>
+                             <div class="card-header text-center"><h4>${newGuy.getRole()} 🎓</h4></div>
                              <div class="card-body">
                              <ul class="list-group list-group-flush">
                              <li class="list-group-item">ID: ${newGuy.id}</li>
-                             <li class="list-group-item">Email:<a href="mailto:${newGuy.email}">${newGuy.email}</a></li>
+                             <li class="list-group-item">Email: <a href="mailto:${newGuy.email}"> ${newGuy.email}</a></li>
                              <li class="list-group-item">School: ${newGuy.school}</li>
+                             </div>
                              </div>
                              </div>
                             `
