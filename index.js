@@ -45,9 +45,9 @@ function makeManager(){
         <div class="card-header text-center"><h4>${topDog.getRole()} ☕️</h4></div>
         <div class="card-body">
         <ul class="list-group list-group-flush">
-        <li class="list-group-item">ID: ${topDog.id}</li>
-        <li class="list-group-item">Email: <a href="mailto:${topDog.email}"> ${topDog.email}</a></li>
-        <li class="list-group-item">Office Number: ${topDog.officeNum}</li>
+        <li class="list-group-item"><strong>ID:</strong> ${topDog.id}</li>
+        <li class="list-group-item"><strong>Email:</strong> <a href="mailto:${topDog.email}"> ${topDog.email}</a></li>
+        <li class="list-group-item"><strong>Office Number:</strong> ${topDog.officeNum}</li>
         </div>
         </div>
         </div>
@@ -118,9 +118,9 @@ function addMore(){
                              <div class="card-header text-center"><h4>${newGuy.getRole()} 🛠</h4></div>
                              <div class="card-body">
                              <ul class="list-group list-group-flush">
-                             <li class="list-group-item">ID: ${newGuy.id}</li>
-                             <li class="list-group-item">Email: <a href="mailto:${newGuy.email}"> ${newGuy.email}</a></li>
-                             <li class="list-group-item">Github: <a href="https://github.com/${newGuy.github}"> ${newGuy.github}</a></li>
+                             <li class="list-group-item"><strong>ID:</strong> ${newGuy.id}</li>
+                             <li class="list-group-item"><strong>Email:</strong> <a href="mailto:${newGuy.email}"> ${newGuy.email}</a></li>
+                             <li class="list-group-item"><strong>Github:</strong> <a href="https://github.com/${newGuy.github}"> ${newGuy.github}</a></li>
                              </div>
                              </div>
                              </div> 
@@ -168,9 +168,9 @@ function addMore(){
                              <div class="card-header text-center"><h4>${newGuy.getRole()} 🎓</h4></div>
                              <div class="card-body">
                              <ul class="list-group list-group-flush">
-                             <li class="list-group-item">ID: ${newGuy.id}</li>
-                             <li class="list-group-item">Email: <a href="mailto:${newGuy.email}"> ${newGuy.email}</a></li>
-                             <li class="list-group-item">School: ${newGuy.school}</li>
+                             <li class="list-group-item"><strong>ID:</strong> ${newGuy.id}</li>
+                             <li class="list-group-item"><strong>Email:</strong> <a href="mailto:${newGuy.email}"> ${newGuy.email}</a></li>
+                             <li class="list-group-item"><strong>School:</strong> ${newGuy.school}</li>
                              </div>
                              </div>
                              </div>
