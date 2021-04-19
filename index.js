@@ -40,8 +40,8 @@ function makeManager(){
         topDog = new Manager(response.name,response.id,response.email,response.officeNum);
         const manHtml = `
         <div class="card text-dark bg-info mb-3" style="max-width: 18rem;">
-        <div class="card-header">${topDog.name}</div>
-        <div class="card-header">${topDog.getRole()} ☕️</div>
+        <div class="card-header text-center">${topDog.name}</div>
+        <div class="card-header text-center">${topDog.getRole()} ☕️</div>
         <div class="card-body">
         <ul class="list-group list-group-flush">
         <li class="list-group-item">ID: ${topDog.id}</li>
@@ -111,8 +111,8 @@ function addMore(){
                             const engHtml =
                              `
                              <div class="card text-dark bg-info mb-3" style="max-width: 18rem;">
-                             <div class="card-header">${newGuy.name}</div>
-                             <div class="card-header">${newGuy.getRole()} 🛠</div>
+                             <div class="card-header text-center">${newGuy.name}</div>
+                             <div class="card-header text-center">${newGuy.getRole()} 🛠</div>
                              <div class="card-body">
                              <ul class="list-group list-group-flush">
                              <li class="list-group-item">ID: ${newGuy.id}</li>
@@ -159,8 +159,8 @@ function addMore(){
                             const intHtml = 
                             `
                             <div class="card text-dark bg-info mb-3" style="max-width: 18rem;">
-                             <div class="card-header">${newGuy.name}</div>
-                             <div class="card-header">${newGuy.getRole()} 🎓</div>
+                             <div class="card-header text-center">${newGuy.name}</div>
+                             <div class="card-header text-center">${newGuy.getRole()} 🎓</div>
                              <div class="card-body">
                              <ul class="list-group list-group-flush">
                              <li class="list-group-item">ID: ${newGuy.id}</li>
@@ -196,8 +196,8 @@ function initHTML(){
             <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
         </head>
         <body>
-        <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
-        Team Profiles
+        <header class="text-center border-bottom bg-info">
+        <h1>Team Profiles</h1>
         </header>
     `;
     fs.writeFile('teamprofile.html',html,function(err){
